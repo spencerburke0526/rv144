@@ -59,12 +59,13 @@ nullresults = as.table(cbind(vacine,placebo))
 barchartGC(nullresults,type = "percent")
 ```
 
+*The first set of charts are the actual results and the second set of charts are the results predicted by the null hypothesis.
 
 The aids vaccine was some what affective among those that have aids at a 50/50 split between those that were given the aids vaccine and those that were given the placebo.
 
 For the individuals that were given the aids vaccine there was a 40/60 split between the people that were given the vaccine and the placebo.
 
-The null hypothesis is the second set of barcharts and displays how the data was expected to be versus what the data actually is.
+The individuals without aids had the same results than the null hypothesis for both trials. The null hypothesis differed from the results for the people that did have aids. The null hypothesis stated that there would be a 50/50 split and in reality the people that had the aids virus was affective among 40.80% of the people that took it and was 59.20% unaffective among the people that took the vaccine.
 
 ### Numerical Results
 
