@@ -1,7 +1,7 @@
 ---
 title: "RV144 Aids trials"
-author: "instr"
-date: "April 13, 2016"
+author: "Spencer Burke"
+date: "March 13, 2018"
 output: html_document
 ---
 
@@ -39,7 +39,6 @@ vacine = c(subgp-51,51)
 placebo =  c(subgp-74,74)
 results = as.table(cbind(vacine,placebo))
 rownames(results) <- c("none","aids")
-
 ```
 
 
@@ -51,6 +50,21 @@ rownames(results) <- c("none","aids")
 ```{r}
 barchartGC(results,type = "percent")
 ```
+```{r}
+vacine=c(8138.5,62.5)
+placebo=c(8138.5,62.5)
+nullresults = as.table(cbind(vacine,placebo))
+```
+```{r}
+barchartGC(nullresults,type = "percent")
+```
+
+
+The aids vaccine was some what affective among those that have aids at a 50/50 split between those that were given the aids vaccine and those that were given the placebo.
+
+For the individuals that were given the aids vaccine there was a 40/60 split between the people that were given the vaccine and the placebo.
+
+The null hypothesis is the second set of barcharts and displays how the data was expected to be versus what the data actually is.
 
 ### Numerical Results
 
@@ -63,19 +77,25 @@ rowPerc(results)
 
 
 
-
 ## Inferential results
 
 <!--Display inferential evidence as to the effectiveness of the vaccine with explanations and interpretations!-->
- We not want to run a statistical test to see if the aides vaccine was seemingly eggective. We state the null and alternative hypothesis for this test.
- 
- $H_0:$ There is no relationship between getting aides and having taken the aides vaccine.
 
 ```{r}
 chisqtestGC(results, graph = TRUE)
 ```
-The p-value of  0.04 means the probability of getting a result like that just obtained if the null hypothesis is true is approximately 4 percent. This is normally considered significant.
+The resulting interpretation is the following, if the null hypothesis is indeed true then the results we just obtained would happen about 482 percent of the time.
+
+We now test the independence of aides vacine and placebo groups.
+
+$H_0:$  The placebo and aides vaccines treatment is indepedent of contracting the disease Aids 
+$H_a:$ having a vaccine is related to contracting the disease
+the p value from the fisher test is r myfish$p.value and the confidence interval is 
+
+
 
 ## Conclusions
 
 <Summarise your results as to the effectiveness of the vaccine with explanations that could be understood by your mom>
+
+Although the null hypothesis states that the half of the individuals given the vacine would act one way and half of the individuals would act another way that is 
